@@ -1,11 +1,11 @@
 // Declare and assign the variables below
-let nameOfTheSpaceShuttle = "Determination";
+let nameOfTheSpaceShuttle = "Determination"
 let shuttleSpeedMph = 17500
 let distanceToMarsKm = 225000000
 let distanceToTheMoonKm = 384400
 let milesPerKilometer = 0.621
 // Use console.log to print the 'typeof' each variable. Print one item per line.
-console.log(typeof nameOfTheSpaceSHuttle);
+console.log(typeof nameOfTheSpaceShuttle);
 console.log(typeof shuttleSpeedMph);
 console.log(typeof distanceToMarsKm);
 console.log(typeof distanceToTheMoonKm);
