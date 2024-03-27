@@ -17,9 +17,8 @@ let weatherStatus = "clear";
 let preparedForLiftoff = true;
 
 let failText = "Shut down the launch operations!!!";
-let readyText = "Ready to liftoff!"
 let liftoffText = (
-    "\All systems are a go! Initiating space shuttle launch sequence." +
+    "\nAll systems are a go! Initiating space shuttle launch sequence." +
     "\n - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" +
     "\nDate: " + date + 
     "\nTime: " + time +
