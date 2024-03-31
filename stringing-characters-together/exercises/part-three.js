@@ -8,12 +8,16 @@ console.log(`${language.slice(0, 1)}${language.slice(4, 5)}`)
 
 //2. Without using slice(), use method chaining to accomplish the same thing.
 
-let initials = language[0]+language[4];
-console.log(initials);
+let languageArr = language.split("");
+console.log(languageArr[0].concat(language[4]));
+
+//let initials = language[0]+language[4];
+//console.log(initials);
+//I tried it couple different ways.
 
 //3. Use bracket notation and a template literal to print, "The abbreviation for 'JavaScript' is 'JS'."
 
-console.log(`The abbreviation for ${language} is '${initials}'`);
+console.log(`The abbreviation for ${language} is '${language[0]}${language[4]}'`);
 
 //4. Just for fun, try chaining 3 or more methods together, and then print the result.
 
