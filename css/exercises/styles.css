@@ -2,3 +2,17 @@
 .center {
     text-align: center;
 }
+#ordered-list{
+    color: blueviolet;
+  }
+  body{
+    background-color: yellow;
+    text-align: left;
+    color: green;
+  }
+  h1{
+    font-size: 36px;
+  }
+  #cool-text {
+    color: blue;
+  }
