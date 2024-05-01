@@ -1,19 +1,88 @@
 <!doctype html>
 
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
+	<!-- Bonus Mission Part 2 - Make it visually engaging -->
+	<link href="./style.css" type="text/css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet" />
+
 	<script>
-		// TODO: create a handler
+		let actions = {
+			google: "https://www.google.com/search",
+			duckDuckGo: "https://duckduckgo.com",
+			bing: "https://www.bing.com/search",
+			ask: "https://www.ask.com/web"
+		}
+	// TODO: create a handler
+	function setSearchEngine(){
+		const buttonSelected = document.querySelector("input[name=engine]:checked");
+		const query = document.getElementById("q");
+		const form = document.getElementById("searchForm");
+		
+		//Bonus mission part 1 - Add validation
+		
+		//Option1: Use window alert
+		// if(query.value.trim() === '') {
+		// 	alert("Oops! You didn't enter anything to search for.");
+		// 	event.preventDefault();
+		// } else if( !buttonSelected) {
+		// 	alert("Oops! Which search engine do you want to use?");
+		// 	event.preventDefault();
+		// }
+		
+		
+		//Option2: Use an error box on the page with text
+		const errorBox = document.getElementById('error-box');
+		const errorMsg = document.getElementById('error-msg');
+		
+		if(query.value.trim() === '') {
+			errorMsg.innerHTML = ("Oops! You didn't enter anything to search for.");
+			errorBox.style.visibility = "visible"
+			event.preventDefault();
+		} else if(!buttonSelected) {
+			errorMsg.innerHTML = ("Oops! Which search engine do you want to use?");
+			errorBox.style.visibility = "visible"
+			event.preventDefault();
+		} else {
+			errorBox.style.visibility = "hidden";
+		}
+
+
+
+		let url = actions[buttonSelected.value];
+		form.action =url;
+	}
+
     window.addEventListener("load", function(){
         // TODO: register the handler
+		const form = document.getElementById("searchForm");
+		form.addEventListener("submit", setSearchEngine)
+
     });
+
 	</script>
 </head>
 
 <body>
+	<h1>Needles from Haystacks</h1>
+	<div id="search-bar">
+		<p id="search-header">Search anywhere and everywhere</p>
+	</div>
 
-	<form id="searchForm">
-    <!-- TODO: add form elements -->
+	<form id="searchForm" target="_blank">
+		<input type="text" id="q" name="q" />
+		<label><input type="radio" name="engine" value="google"/>Google</label>
+		<label><input type="radio" name="engine" value="duckDuckGo"/>DuckDuckGo</label>
+		<label><input type="radio" name="engine" value="bing"/>Bing</label>
+		<label><input type="radio" name="engine" value="ask"/>Ask</label>
+		<button id="submit" value="Go!">Go!</button>
 	</form>
+
+	<!-- Bonus Mission Part 1, Option 2-->
+	<div id="error-box">
+		<p id="error-msg"></p>
+	</div>
+
+
 
 </body>
